@@ -1,0 +1,13 @@
+glide:
+  eim:
+    graphdb:  
+      repository: EnterpriseInformationModel
+      server:
+        url:  http://localhost:7200/
+      sparql:
+          endpoint:
+            url:  http://localhost:7200/sparql
+    baseOrganizationUri:  "http://spec.mycompany.net/ESS#"
+server:
+  port: 16008
+  context-path: /eim

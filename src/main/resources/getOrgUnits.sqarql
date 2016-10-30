@@ -1,0 +1,15 @@
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX fibo-fnd-aap-agt:<http://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/Agents/>
+PREFIX fibo-be-le-fbo:<http://www.omg.org/spec/EDMC-FIBO/BE/LegalEntities/FormalBusinessOrganizations/>
+PREFIX my-org:<http://spec.mycompany.net#>
+SELECT ?orgType ?orgUnit ?orgName ?subunit
+	WHERE { ?orgType rdfs:subClassOf fibo-be-le-fbo:OrganizationalSubUnit . 
+		?orgUnit rdf:type ?orgType .
+		?orgUnit fibo-fnd-aap-agt:hasName ?orgName .
+		?orgUnit fibo-be-le-fbo:isSubUnitOf ?subunit .
+		
+}
