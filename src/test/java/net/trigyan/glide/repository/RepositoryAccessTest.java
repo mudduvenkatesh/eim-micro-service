@@ -5,6 +5,10 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.*;
 
+import java.util.Collection;
+import java.util.Optional;
+
+import org.eclipse.rdf4j.repository.manager.RepositoryInfo;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -51,6 +55,9 @@ public class RepositoryAccessTest {
 	}
 	@Test
 	public void testGetRepositories() {
-		assertThat(repositoryAccessService.getRepositories(),is(not(equalTo(null))));
+		Collection<RepositoryInfo> repos = repositoryAccessService.getRepositories();
+		assertThat(repos,is(not(equalTo(null))));
+		Optional<RepositoryInfo> systemRepo = repos.stream().filter(repo->repo.getId().equals("SYSTEM")).findFirst();
+		assertThat(systemRepo,is(not(equalTo(null))));
 	}
 }

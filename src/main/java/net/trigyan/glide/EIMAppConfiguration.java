@@ -4,6 +4,7 @@ import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.http.HTTPRepository;
+import org.eclipse.rdf4j.repository.manager.RemoteRepositoryManager;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -47,6 +48,13 @@ public class EIMAppConfiguration {
 	public RepositoryAccessService repositoryAccessService() {
 		return new RepositoryAccessService();
 	}
+	@Bean
+	public RemoteRepositoryManager remoteRepositoryManager() {
+		RemoteRepositoryManager manager = new RemoteRepositoryManager(graphDBServer);
+		manager.initialize();
+		return manager;
+	}
+	
 	
 	
 	
