@@ -52,5 +52,16 @@ public class CreateEIMDataTest {
 		buList.add(new KeyValue("K01007","Broker-Dealer-Services"));
 		return buList;	
 	}
+	List<KeyValue> getSector() {
+		List<KeyValue> sectorList = new ArrayList<>();
+		sectorList.add(new KeyValue("",""));
+		sectorList.add(new KeyValue("",""));
+		sectorList.add(new KeyValue("",""));
+		sectorList.add(new KeyValue("",""));
+		sectorList.add(new KeyValue("",""));
+		sectorList.add(new KeyValue("",""));
+		sectorList.add(new KeyValue("",""));
+		return sectorList;
+	}
 
 }

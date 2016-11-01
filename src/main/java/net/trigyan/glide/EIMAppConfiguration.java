@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import net.trigyan.glide.Dao.OrganizationDAO;
 import net.trigyan.glide.model.EIMModelFactory;
 import net.trigyan.glide.model.SimpleEIMModelFactory;
+import net.trigyan.glide.repository.service.RepositoryAccessService;
 import net.trigyan.glide.spec.vocabulary.DefaultIRIMintingService;
 import net.trigyan.glide.spec.vocabulary.IRIMintingService;
 
@@ -40,6 +41,11 @@ public class EIMAppConfiguration {
 	@Bean
 	public EIMModelFactory modelFactory() {
 		return new SimpleEIMModelFactory();
+	}
+	
+	@Bean 
+	public RepositoryAccessService repositoryAccessService() {
+		return new RepositoryAccessService();
 	}
 	
 	

@@ -3,7 +3,7 @@ glide:
     graphdb:  
       repository: EnterpriseInformationModel
       server:
-        url:  http://localhost:7200/
+        url:  http://localhost:8080/rdf4j-server
       sparql:
           endpoint:
             url:  http://localhost:7200/sparql
