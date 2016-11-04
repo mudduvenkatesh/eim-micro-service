@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 //@EnableAutoConfiguration
-public class EimMicroServiceApplication {
+public class EimMicroServiceApplication  {
 
-	@Value("${glide.eim.graphdb.server.url}")
+	@Value("${graphdb.server.url}")
 	String graphDBServer;
 	
 	

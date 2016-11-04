@@ -23,14 +23,14 @@ public class OrganizationController {
 	@Autowired
 	ValueFactory valueFactory;
 	
-	@Value("${glide.eim.baseOrganizationUri}")
+	@Value("${glide.eim.baseIri}")
 	String baseCompanyUri;
 
 	@RequestMapping(value = "/organization",method = RequestMethod.GET)
 	public Organization getOrganization(
 			@RequestParam(value = "name", defaultValue = "http://example.org") String name) {
 		//Get the Base IRI
-		String fullIRIString = baseCompanyUri + name;
+		String fullIRIString = name;
 		IRI orgIRI = valueFactory.createIRI(fullIRIString);
 		return dao.getOrganization(orgIRI);
 		//return null;

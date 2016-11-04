@@ -1,0 +1,37 @@
+{"properties": [
+  {
+    "name": "graphdb.server.url",
+    "type": "java.lang.String",
+    "description": "Backend rdf4j server to host RDF data"
+  },
+  {
+    "name": "glide.eim.repository",
+    "type": "java.lang.String",
+    "description": "Repository that will hold the EIM data and metadata"
+  },
+  {
+    "name": "graphdb.server.sparql.endpoint.url",
+    "type": "java.lang.String",
+    "description": "SPARQL Endpoint for backend server"
+  },
+  {
+    "name": "glide.eim.decription",
+    "type": "java.lang.String",
+    "description": "Description for "
+  },
+  {
+    "name": "glide.server.port",
+    "type": "java.lang.String",
+    "description": "A description for 'glide.server.port'"
+  },
+  {
+    "name": "glide.server.context-path",
+    "type": "java.lang.String",
+    "description": "A description for 'glide.server.context-path'"
+  },
+  {
+    "name": "glide.eim.base-iRI",
+    "type": "java.lang.String",
+    "description": "The base IRI to be used for all the objects created in the EIM Model"
+  }
+]}

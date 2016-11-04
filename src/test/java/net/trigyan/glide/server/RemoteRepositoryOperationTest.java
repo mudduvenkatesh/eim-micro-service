@@ -14,21 +14,21 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
 public class RemoteRepositoryOperationTest {
 
-	Logger logger = LoggerFactory.getLogger(RepositoryConnectionTest.class);
-	@Value("${glide.eim.graphdb.server.url}")
-	String repo;
-	
-	
-	@Test
-	public void testRemoteRepoConnection() {
-		RemoteRepositoryManager manager = new RemoteRepositoryManager(repo);
-		manager.initialize();
-		Collection<RepositoryInfo> repos = manager.getAllRepositoryInfos();
-		//repos.stream().map(r->r.getId())	
-	}
+//	Logger logger = LoggerFactory.getLogger(RepositoryConnectionTest.class);
+//	@Value("${glide.eim.graphdb.server.url}")
+//	String repo;
+//	
+//	
+//	@Test
+//	public void testRemoteRepoConnection() {
+//		RemoteRepositoryManager manager = new RemoteRepositoryManager(repo);
+//		manager.initialize();
+//		Collection<RepositoryInfo> repos = manager.getAllRepositoryInfos();
+//		//repos.stream().map(r->r.getId())	
+//	}
 
 }

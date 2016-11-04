@@ -12,23 +12,23 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
 public class RepositoryConnectionTest {
 
-	@Value("${glide.eim.graphdb.server.url}")   
-	String repositoryServerUrl;
-	@Value("${glide.eim.graphdb.repository}")
-	String repositoryId;
-	
-	private final Logger logger = LoggerFactory.getLogger(RepositoryConnectionTest.class);
-	@Test
-	public void testRepoConnection() {
-		Repository repo = new HTTPRepository(repositoryServerUrl, repositoryId);
-		repo.initialize();
-		logger.info(String.format("Repository Initialized(%s),Writable(%s),Connection(%s)",repo.isInitialized(),repo.isWritable(),
-				repo.getConnection().isOpen()));
-		repo.getConnection().close();
-	}
+//	@Value("${glide.eim.graphdb.server.url}")   
+//	String repositoryServerUrl;
+//	@Value("${glide.eim.graphdb.repository}")
+//	String repositoryId;
+//	
+//	private final Logger logger = LoggerFactory.getLogger(RepositoryConnectionTest.class);
+//	@Test
+//	public void testRepoConnection() {
+//		Repository repo = new HTTPRepository(repositoryServerUrl, repositoryId);
+//		repo.initialize();
+//		logger.info(String.format("Repository Initialized(%s),Writable(%s),Connection(%s)",repo.isInitialized(),repo.isWritable(),
+//				repo.getConnection().isOpen()));
+//		repo.getConnection().close();
+//	}
 
 }

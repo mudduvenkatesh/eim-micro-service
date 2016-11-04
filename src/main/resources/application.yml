@@ -1,13 +1,18 @@
+graphdb:  
+  server:
+    url:  http://localhost:8080/rdf4j-server
+    sparql:
+      endpoint:
+        url:  http://localhost:7200/sparql
 glide:
   eim:
-    graphdb:  
-      repository: EnterpriseInformationModel
-      server:
-        url:  http://localhost:8080/rdf4j-server
-      sparql:
-          endpoint:
-            url:  http://localhost:7200/sparql
-    baseOrganizationUri:  "http://spec.mycompany.net/ESS#"
+    repository:
+      identifier: EnterpriseInformationModel
+      name: Enterprise Information Model
+    #IRI-defaults: - moved to service call  
+      #baseIRI:  http://spec.myenterprisebank.net
+      #IRI=type: slash
 server:
   port: 16008
   context-path: /eim
+    

@@ -2,6 +2,7 @@ package net.trigyan.glide.model;
 
 import org.eclipse.rdf4j.model.IRI;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import net.trigyan.glide.spec.vocabulary.Concept;
 import net.trigyan.glide.spec.vocabulary.DefaultConcept;
@@ -12,6 +13,7 @@ import net.trigyan.glide.spec.vocabulary.IRIMintingService;
  * @author vmuddu
  *
  */
+@Component
 public class SimpleEIMModelFactory implements EIMModelFactory {
 
 	static final Concept orgConcept;

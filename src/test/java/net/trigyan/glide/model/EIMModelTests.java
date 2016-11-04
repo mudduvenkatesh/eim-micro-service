@@ -15,29 +15,29 @@ import net.trigyan.glide.spec.vocabulary.Concept;
 import net.trigyan.glide.spec.vocabulary.DefaultConcept;
 import net.trigyan.glide.spec.vocabulary.IRIMintingService;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
 public class EIMModelTests {
 
-	private final Logger logger = LoggerFactory.getLogger(EIMModelTests.class);
-	@Autowired
-	IRIMintingService iriMintingService;
-	@Autowired
-	EIMModelFactory modelFactory;
-	@Test
-	public void test() {
-		String base = "http://spec.myorg.net";
-		Concept c = new DefaultConcept("Organization");
-		IRI org1 = iriMintingService.mintHashIRI(base, c, "MyEnterpriseBank");
-		logger.info(org1.stringValue());
-	}
-	@Test
-	public void testCreateOrganization() {
-		String base = "http://spec.myorg.net";
-		Organization org = modelFactory.createOrganization(base, "MyEnterpriseBank", "MyEnterprise Bank",
-				"My Enterprise Bank");
-		logger.info(org.toString());
-	}
+//	private final Logger logger = LoggerFactory.getLogger(EIMModelTests.class);
+//	@Autowired
+//	IRIMintingService iriMintingService;
+//	@Autowired
+//	EIMModelFactory modelFactory;
+//	@Test
+//	public void test() {
+//		String base = "http://spec.myorg.net";
+//		Concept c = new DefaultConcept("Organization");
+//		IRI org1 = iriMintingService.mintHashIRI(base, c, "MyEnterpriseBank");
+//		logger.info(org1.stringValue());
+//	}
+//	@Test
+//	public void testCreateOrganization() {
+//		String base = "http://spec.myorg.net";
+//		Organization org = modelFactory.createOrganization(base, "MyEnterpriseBank", "MyEnterprise Bank",
+//				"My Enterprise Bank");
+//		logger.info(org.toString());
+//	}
 	//@Test 
 	
 	

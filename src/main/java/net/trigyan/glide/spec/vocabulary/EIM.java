@@ -83,6 +83,11 @@ public class EIM {
 	public static final IRI SERVICE_NAME;
 	public static final IRI SERVICE_ID;
 	public static final IRI HAS_DEFINITION;
+	public static final IRI CONFIGURATION;
+	public static final IRI ApplicationCONFIGURATION;
+	public static final IRI EIMApplicationCONFIGURATION;
+	public static final IRI CONFIG_PROPERTY_VALUE;
+	public static final IRI CONFIG_PROPERTY_NAME;
 	
 	 
 	static {
@@ -145,6 +150,11 @@ public class EIM {
 		SERVICE_NAME=factory.createIRI(NAMESPACE+"serviceName");
 		SERVICE_ID=factory.createIRI(NAMESPACE+"serviceId");
 		HAS_DEFINITION=factory.createIRI(NAMESPACE+"hasDefinition");
+		CONFIGURATION=factory.createIRI(NAMESPACE+"Configuration");
+		ApplicationCONFIGURATION=factory.createIRI(NAMESPACE+"ApplicationConfiguration");
+		EIMApplicationCONFIGURATION=factory.createIRI(NAMESPACE+"EIMApplicationConfiguration");
+		CONFIG_PROPERTY_NAME=factory.createIRI(NAMESPACE+"configPropertyValue");
+		CONFIG_PROPERTY_VALUE=factory.createIRI(NAMESPACE+"configPropertyName");
 		
 	}
 	
