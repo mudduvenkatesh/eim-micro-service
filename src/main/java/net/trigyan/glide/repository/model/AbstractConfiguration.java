@@ -1,6 +1,5 @@
 package net.trigyan.glide.repository.model;
 
-import org.eclipse.rdf4j.model.Resource;
 import org.eclipse.rdf4j.model.Value;
 
 public class AbstractConfiguration implements Configuration {
@@ -12,6 +11,8 @@ public class AbstractConfiguration implements Configuration {
 	
 	public AbstractConfiguration() {
 		super();
+		
+		
 		
 	}
 	public AbstractConfiguration(Value propertyName, Value propertyValue) {

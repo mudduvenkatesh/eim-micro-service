@@ -32,7 +32,7 @@ public class ConfigurationSerializer extends StdSerializer<BaseConfiguration> {
 	@Override
 	public void serialize(BaseConfiguration value, JsonGenerator gen, SerializerProvider provider) throws IOException {
 		gen.writeStartObject();
-		gen.writeString(value.propertyValue.toString());
+		gen.writeStringField(value.propertyName.stringValue(),value.propertyValue.stringValue());
 		gen.writeEndObject();
 
 	}

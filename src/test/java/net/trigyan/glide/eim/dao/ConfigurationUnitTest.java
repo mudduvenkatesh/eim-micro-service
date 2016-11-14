@@ -27,7 +27,7 @@ public class ConfigurationUnitTest {
 		Map<String, Configuration> configs = configurationDao.getEIMConfiguration();
 		Configuration prop = configs.get(Configuration.baseIRIPropertyName);
 		Value baseIRIProp = prop.propertyValue();
-		logger.info("Base IRI is " + baseIRIProp.stringValue());
+		logger.info("Base IRI Name is " + prop.propertyName() + " and value is " + baseIRIProp.stringValue());
 	}
 
 }
