@@ -16,13 +16,13 @@ public class EIMApplicationListener implements ApplicationListener<ApplicationRe
 
 	@Autowired
 	RepositoryAccessService repositoryAccessService;
-	@Value("${glide.eim.repository.identifier}")
+	@Value("${glide.eim.repository.repo-id}")
 	String repositoryId;
-	@Value("${glide.eim.repository.name}")
+	@Value("${glide.eim.repository.repo-name}")
 	String repositoryName;
 
 	Logger logger = LoggerFactory.getLogger(EIMApplicationListener.class);
-
+	String baseIRI = "http://spec.myenterprisecompany.net";
 	@Override
 	public void onApplicationEvent(ApplicationReadyEvent appReadyEvent) {
 		logger.info("EIM App started");
@@ -32,7 +32,8 @@ public class EIMApplicationListener implements ApplicationListener<ApplicationRe
 			// No repo exists
 			// Create one
 			//logger.info("No Repository exists in the RDF backend server with id " + repositoryId);
-			RepositoryInfo newRepInfo = repositoryAccessService.createRepository(repositoryId, repositoryName);
+			RepositoryInfo newRepInfo = repositoryAccessService.createBootStrapRepository(
+					baseIRI);
 			logger.info(String.format("Created Repo %s[%s] in %s", newRepInfo.getId(), newRepInfo.getDescription(),
 					newRepInfo.getLocation()));
 

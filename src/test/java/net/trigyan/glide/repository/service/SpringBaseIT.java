@@ -22,7 +22,7 @@ import net.trigyan.glide.EimMicroServiceApplication;
 //@WebAppConfiguration
 @SpringBootTest(webEnvironment=WebEnvironment.DEFINED_PORT)
 //@IntegrationTest
-public class SpringIntegrationTest {
+public class SpringBaseIT {
 	protected static ResponseResults latestResponse = null;
     @Autowired
     protected RestTemplate restTemplate;

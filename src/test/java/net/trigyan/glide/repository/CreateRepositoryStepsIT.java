@@ -16,23 +16,16 @@ import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 import org.eclipse.rdf4j.repository.manager.RepositoryInfo;
 import org.eclipse.rdf4j.repository.manager.RepositoryManager;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootContextLoader;
-import org.springframework.test.context.ContextConfiguration;
 
-import cucumber.api.CucumberOptions;
 import cucumber.api.java8.En;
-import cucumber.api.junit.Cucumber;
-import net.trigyan.glide.EIMAppConfiguration;
-import net.trigyan.glide.EimMicroServiceApplication;
 import net.trigyan.glide.repository.service.RepositoryAccessService;
-import net.trigyan.glide.repository.service.SpringIntegrationTest;
+import net.trigyan.glide.repository.service.SpringBaseIT;
 
 //@RunWith(Cucumber.class)
 //@CucumberOptions(features="classpath:features")
 //@ContextConfiguration(classes = EimMicroServiceApplication.class, loader = SpringBootContextLoader.class)
-public class CreateRepositoryTestSteps extends SpringIntegrationTest implements En  {
+public class CreateRepositoryStepsIT extends SpringBaseIT implements En  {
 
 	@Autowired
 	RepositoryAccessService repositoryAccessService;
@@ -41,7 +34,7 @@ public class CreateRepositoryTestSteps extends SpringIntegrationTest implements 
 	@cucumber.api.java.Before
 	public void before() {
 	}
-	public CreateRepositoryTestSteps() {
+	public CreateRepositoryStepsIT() {
 		Given("^I have the RepositoryAccessService setup$",()-> {
 			assertNotNull(repositoryAccessService);
 			assertNotNull(remoteRepositoryManager);

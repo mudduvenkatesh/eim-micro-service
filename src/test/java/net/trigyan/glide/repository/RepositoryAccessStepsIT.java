@@ -16,12 +16,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import cucumber.api.java8.En;
 import net.trigyan.glide.repository.service.RepositoryAccessService;
-import net.trigyan.glide.repository.service.SpringIntegrationTest;
+import net.trigyan.glide.repository.service.SpringBaseIT;
 
 //@SpringBootTest
 //@ContextConfiguration(classes= EIMAppConfiguration.class)
 //@ContextConfiguration(classes = EIMAppConfiguration.class, loader = SpringBootContextLoader.class)
-public class RepositoryAccessTestSteps extends SpringIntegrationTest implements En {
+public class RepositoryAccessStepsIT extends SpringBaseIT implements En {
 	
 	@Autowired
 	RepositoryAccessService repositoryAccessService;
@@ -33,7 +33,7 @@ public class RepositoryAccessTestSteps extends SpringIntegrationTest implements 
 	
 	private Collection<RepositoryInfo> repos = null;
 	
-	public RepositoryAccessTestSteps() {
+	public RepositoryAccessStepsIT() {
 		Given("^I have the RepositoryAccessService$",()-> {
 			assertNotNull(repositoryAccessService);
 		});

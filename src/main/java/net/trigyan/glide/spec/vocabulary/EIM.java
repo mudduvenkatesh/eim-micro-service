@@ -88,6 +88,13 @@ public class EIM {
 	public static final IRI EIMApplicationCONFIGURATION;
 	public static final IRI CONFIG_PROPERTY_VALUE;
 	public static final IRI CONFIG_PROPERTY_NAME;
+	public static final IRI CONFIG_PROPERTY;
+	public static final IRI EIM_CONFIG_PROPERTY;
+	public static final IRI hasConfigProperty;
+	public static final IRI SYSTEM_MANAGED_CONFIG_PROPERTY;
+	public static final IRI USER_MANAGED_CONFIG_PROPERTY;
+
+	
 	
 	 
 	static {
@@ -153,9 +160,13 @@ public class EIM {
 		CONFIGURATION=factory.createIRI(NAMESPACE+"Configuration");
 		ApplicationCONFIGURATION=factory.createIRI(NAMESPACE+"ApplicationConfiguration");
 		EIMApplicationCONFIGURATION=factory.createIRI(NAMESPACE+"EIMApplicationConfiguration");
-		CONFIG_PROPERTY_NAME=factory.createIRI(NAMESPACE+"configPropertyValue");
-		CONFIG_PROPERTY_VALUE=factory.createIRI(NAMESPACE+"configPropertyName");
-		
+		CONFIG_PROPERTY_NAME=factory.createIRI(NAMESPACE+"configPropertyName");
+		CONFIG_PROPERTY_VALUE=factory.createIRI(NAMESPACE+"configPropertyValue");
+		CONFIG_PROPERTY=factory.createIRI(NAMESPACE+"ConfigProperty");
+		EIM_CONFIG_PROPERTY=factory.createIRI(NAMESPACE+"EIMConfigProperty");
+		SYSTEM_MANAGED_CONFIG_PROPERTY=factory.createIRI(NAMESPACE+"SystemManagedConfigProperty");
+		USER_MANAGED_CONFIG_PROPERTY=factory.createIRI(NAMESPACE+"UserManagedConfigProperty");
+		hasConfigProperty=factory.createIRI(NAMESPACE+"hasConfigProperty");	
 	}
 	
 }

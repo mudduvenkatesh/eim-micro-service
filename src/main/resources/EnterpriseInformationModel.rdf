@@ -43,6 +43,15 @@
     
 
 
+    <!-- http://spec.trigyan.net/glide/EnterpriseInformationModel#hasConfigProperty -->
+
+    <owl:ObjectProperty rdf:about="http://spec.trigyan.net/glide/EnterpriseInformationModel#hasConfigProperty">
+        <rdfs:domain rdf:resource="http://spec.trigyan.net/glide/EnterpriseInformationModel#Configuration"/>
+        <rdfs:range rdf:resource="http://spec.trigyan.net/glide/EnterpriseInformationModel#ConfigProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://spec.trigyan.net/glide/EnterpriseInformationModel#is_authoratative_source_for -->
 
     <owl:ObjectProperty rdf:about="http://spec.trigyan.net/glide/EnterpriseInformationModel#is_authoratative_source_for">
@@ -374,9 +383,9 @@
     
 
 
-    <!-- http://spec.trigyan.net/glide/EnterpriseInformationModel#Configuration -->
+    <!-- http://spec.trigyan.net/glide/EnterpriseInformationModel#ConfigProperty -->
 
-    <owl:Class rdf:about="http://spec.trigyan.net/glide/EnterpriseInformationModel#Configuration">
+    <owl:Class rdf:about="http://spec.trigyan.net/glide/EnterpriseInformationModel#ConfigProperty">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://spec.trigyan.net/glide/EnterpriseInformationModel#configPropertyValue"/>
@@ -391,6 +400,12 @@
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
+    
+
+
+    <!-- http://spec.trigyan.net/glide/EnterpriseInformationModel#Configuration -->
+
+    <owl:Class rdf:about="http://spec.trigyan.net/glide/EnterpriseInformationModel#Configuration"/>
     
 
 
@@ -571,6 +586,33 @@
 
     <owl:Class rdf:about="http://spec.trigyan.net/glide/EnterpriseInformationModel#EIMApplicationConfiguration">
         <rdfs:subClassOf rdf:resource="http://spec.trigyan.net/glide/EnterpriseInformationModel#ApplictionConfiguration"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://spec.trigyan.net/glide/EnterpriseInformationModel#hasConfigProperty"/>
+                <owl:someValuesFrom rdf:resource="http://spec.trigyan.net/glide/EnterpriseInformationModel#ConfigProperty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://spec.trigyan.net/glide/EnterpriseInformationModel#EIMConfigProperty -->
+
+    <owl:Class rdf:about="http://spec.trigyan.net/glide/EnterpriseInformationModel#EIMConfigProperty">
+        <rdfs:subClassOf rdf:resource="http://spec.trigyan.net/glide/EnterpriseInformationModel#SystemManagedConfigProperty"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://spec.trigyan.net/glide/EnterpriseInformationModel#configPropertyValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://spec.trigyan.net/glide/EnterpriseInformationModel#configPropertyName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -706,10 +748,26 @@
     
 
 
+    <!-- http://spec.trigyan.net/glide/EnterpriseInformationModel#SystemManagedConfigProperty -->
+
+    <owl:Class rdf:about="http://spec.trigyan.net/glide/EnterpriseInformationModel#SystemManagedConfigProperty">
+        <rdfs:subClassOf rdf:resource="http://spec.trigyan.net/glide/EnterpriseInformationModel#ConfigProperty"/>
+    </owl:Class>
+    
+
+
     <!-- http://spec.trigyan.net/glide/EnterpriseInformationModel#TransactionData -->
 
     <owl:Class rdf:about="http://spec.trigyan.net/glide/EnterpriseInformationModel#TransactionData">
         <rdfs:subClassOf rdf:resource="http://spec.trigyan.net/glide/EnterpriseInformationModel#BusinessData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://spec.trigyan.net/glide/EnterpriseInformationModel#UserManagedConfigProperty -->
+
+    <owl:Class rdf:about="http://spec.trigyan.net/glide/EnterpriseInformationModel#UserManagedConfigProperty">
+        <rdfs:subClassOf rdf:resource="http://spec.trigyan.net/glide/EnterpriseInformationModel#ConfigProperty"/>
     </owl:Class>
     
 

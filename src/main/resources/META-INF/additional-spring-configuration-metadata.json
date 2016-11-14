@@ -5,11 +5,6 @@
     "description": "Backend rdf4j server to host RDF data"
   },
   {
-    "name": "glide.eim.repository",
-    "type": "java.lang.String",
-    "description": "Repository that will hold the EIM data and metadata"
-  },
-  {
     "name": "graphdb.server.sparql.endpoint.url",
     "type": "java.lang.String",
     "description": "SPARQL Endpoint for backend server"
@@ -33,5 +28,25 @@
     "name": "glide.eim.base-iRI",
     "type": "java.lang.String",
     "description": "The base IRI to be used for all the objects created in the EIM Model"
+  },
+  {
+    "name": "glide.eim.repository.repo-id",
+    "type": "java.lang.String",
+    "description": "A description for 'glide.eim.repository.repo-id'"
+  },
+  {
+    "name": "glide.eim.repository.repo-name",
+    "type": "java.lang.String",
+    "description": "A description for 'glide.eim.repository.repo-name'"
+  },
+  {
+    "name": "glide.eim.repository.graph-context",
+    "type": "java.lang.String",
+    "description": "A description for 'glide.eim.repository.graph-context'"
+  },
+  {
+    "name": "glide.eim.repository.eim-config-graph-context",
+    "type": "java.lang.String",
+    "description": "A description for 'glide.eim.repository.eim-config-graph-context'"
   }
 ]}

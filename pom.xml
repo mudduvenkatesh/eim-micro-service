@@ -10,9 +10,9 @@
 
 	<name>eim-micro-service</name>
 	<description>Glide EIM Microservice</description>
-	
-		
-		
+
+
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -72,16 +72,21 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>${maven.failsafe.plugin}</version>
+				<!-- <version>${maven.failsafe.plugin}</version> -->
 				<executions>
 					<execution>
-						<id>integration-test</id>
+						<id>failsafe-integration-test</id>
+						<phase>integration-test</phase>
 						<goals>
 							<goal>integration-test</goal>
 							<goal>verify</goal>
@@ -89,10 +94,12 @@
 					</execution>
 				</executions>
 				<configuration>
+					<!-- 
 					<includes>
-						<include>**/*Test.java</include>
-						<include>**/*Tests.java</include>
+						<include>**/*IntegrationTest.java</include>
+						<include>**/*IntegrationTests.java</include>
 					</includes>
+					 -->
 					<systemPropertyVariables>
 						<cucumber.options>--plugin pretty</cucumber.options>
 					</systemPropertyVariables>

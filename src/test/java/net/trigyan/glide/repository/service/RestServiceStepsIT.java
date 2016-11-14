@@ -27,9 +27,9 @@ import org.springframework.web.client.RestTemplate;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class RestServiceStepsIntegrationTests extends SpringIntegrationTest {
+public class RestServiceStepsIT extends SpringBaseIT {
 
-	Logger logger = LoggerFactory.getLogger(RestServiceStepsIntegrationTests.class);
+	Logger logger = LoggerFactory.getLogger(RestServiceStepsIT.class);
 	ResponseEntity<Collection<RepositoryInfo>> response = null;
 	ResponseEntity<RepositoryInfo> putResponse = null;
 	// Collection<RepositoryInfo> result=null;
@@ -62,39 +62,40 @@ public class RestServiceStepsIntegrationTests extends SpringIntegrationTest {
 		assertThat(response.getBody().size() >= 1);
 	}
 
-	@Then("^there is a repository by name \"([^\"]*)\"$")
-	public void there_is_a_repo_by_name_system(String repoName) {
-		long size = response.getBody().stream().filter(repo -> repo.getId().equals(repoName)).count();
-		assertThat(size == 1);
-	}
-
-	@When("^the client calls POST /createRepository with \"([^\"]*)\" and \"([^\"]*)\"$")
-	public void the_client_calls_createRepository(String id, String name) {
-		final String url = "http://localhost:16008/eim/createRepository";
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-		MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
-		map.add("id", id);
-		map.add("name", name);
-		HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(map, headers);
-		//ResponseEntity<String> putResponse1 = restTemplate.postForEntity(url, request, String.class);
-		putResponse = restTemplate.postForEntity(url, request, RepositoryInfo.class);
-		assertThat(putResponse!=null);
-		logger.info(putResponse.getBody().toString());
+//	@Then("^there is a repository by name \"([^\"]*)\"$")
+//	public void there_is_a_repo_by_name_system(String repoName) {
+//		long size = response.getBody().stream().filter(repo -> repo.getId().equals(repoName)).count();
+//		assertThat(size == 1);
+//	}
+//
+//	@When("^the client calls POST /createRepository with \"([^\"]*)\" and \"([^\"]*)\"$")
+//	public void the_client_calls_createRepository(String id, String name) {
+//		final String url = "http://localhost:16008/eim/createRepository";
+//		HttpHeaders headers = new HttpHeaders();
+//		headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+//		MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
+//		map.add("id", id);
+//		map.add("name", name);
+//		HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(map, headers);
+//		//ResponseEntity<String> putResponse1 = restTemplate.postForEntity(url, request, String.class);
+//		putResponse = restTemplate.postForEntity(url, request, RepositoryInfo.class);
+//		assertThat(putResponse!=null);
+//		logger.info(putResponse.getBody().toString());
+//	
+//	}
+//
+//	@Then("^there is a new repository by name \"([^\"]*)\"$")
+//	public void there_is_a_new_repo_by_name(String name) {
+//		final String url = "http://localhost:16008/eim/repositories/";
+//		Map<String, String> params = new HashMap<String, String>();
+//	    params.put("id", name);
+//	    ResponseEntity<String> response2 = restTemplate.getForEntity(url,String.class,params); 
+//	    assertThat(response2.getBody()!=null);
+//	    logger.info(response2.getBody());
+//	    
+//	     
+//	    
+//	}
 	
-	}
-
-	@Then("^there is a new repository by name \"([^\"]*)\"$")
-	public void there_is_a_new_repo_by_name(String name) {
-		final String url = "http://localhost:16008/eim/repositories/";
-		Map<String, String> params = new HashMap<String, String>();
-	    params.put("id", name);
-	    ResponseEntity<String> response2 = restTemplate.getForEntity(url,String.class,params); 
-	    assertThat(response2.getBody()!=null);
-	    logger.info(response2.getBody());
-	    
-	     
-	    
-	}
 
 }
